@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="http://www.w3school.com.cn/i/" />
+    <base target="_blank" />
+</head>
+<body>
+<!-- ctrl+F9 刷新-->
+<!-- <abbr> 是一个缩写-->
+The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
+<!-- <a> 超链接-->
+<a href="http://www.w3school.com.cn">W3School</a>
+<!-- 效果和abbr一致 -->
+<a title="World Wide Web">WWW</a>
+<!-- <address> -->
+<address>
+    Written by <a href="mailto:webmaster@example.com">Donald Duck</a>.<br>
+    Visit us at:<br>
+    Example.com<br>
+    Box 564, Disneyland<br>
+    USA
+</address>
+
+<p>请点击图像上的星球，把它们放大。</p>
+
+<img
+        th:src="@{/img/blog.png}"
+        border="0" usemap="#planetmap"
+        alt="Planets" />
+
+<map name="planetmap" id="planetmap">
+
+    <area
+            shape="circle"
+            coords="180,139,14"
+            th:href ="@{/img/classic-pattern-bg.png}"
+            target ="_parent"
+            alt="Venus" />
+
+    <area
+            shape="circle"
+            coords="129,161,10"
+            th:href ="@{/img/tm-home-img.jpg}"
+            target ="_top"
+            alt="Mercury" />
+
+    <area
+            shape="rect"
+            coords="0,0,110,260"
+            th:href ="@{/img/tm-contact-img.jpg}"
+            target ="_parent"
+            alt="Sun" />
+
+</map>
+
+<p><b>注释：</b>img 元素中的 "usemap" 属性引用 map 元素中的 "id" 或 "name" 属性（根据浏览器），所以我们同时向 map 元素添加了 "id" 和 "name" 属性。</p>
+<article>
+    <h1>Internet Explorer 9</h1>
+    <p>Windows Internet Explorer 9（简称 IE9）于 2011 年 3 月 14 日发布.....</p>
+</article>
+<img src="eg_smile.gif" /><br />
+<p>请注意，我们已经为图像规定了一个相对地址。由于我们已经在 head 部分规定了一个基准 URL，浏览器将在如下地址寻找图片：</p>
+<p>"http://www.w3school.com.cn/i/eg_smile.gif"</p>
+
+<br /><br />
+<p><a href="http://www.w3school.com.cn">W3School</a></p>
+<p>请注意，链接会在新窗口中打开，即使链接中没有 target="_blank" 属性。这是因为 base 元素的 target 属性已经被设置为 "_blank" 了。</p>
+<bdo dir="ltr">
+    Here is <bdi dir = "rtl">some</bdi> Hebrew text
+</bdo>
+<div th:text="${hello}">hahahahahh</div>
+<div th:text="${hello}"></div>
+</body>
+</html>
