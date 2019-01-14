@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class myInterceptor implements HandlerInterceptor {
     private static final Logger LOGGE = LoggerFactory.getLogger(myInterceptor.class);
-    LoggerBuilder loggerBuilder =new LoggerBuilder();
-    Logger logger = loggerBuilder.getLogger("test");
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
@@ -26,10 +24,6 @@ public class myInterceptor implements HandlerInterceptor {
         LOGGE.info("contextPath"+contextPath);
         LOGGE.info("uri"+uri);
         LOGGE.info("request"+request);
-        logger.debug("shuai1 +++++++++++++++++++++++++++++++++++++debug");
-        logger.warn("shuai2 +++++++++++++++++++++++++++++++++++++warn");
-        logger.info("shuai3 +++++++++++++++++++++++++++++++++++++info");
-        logger.error("shuai4 +++++++++++++++++++++++++++++++++++++error");
         return false;
     }
 
